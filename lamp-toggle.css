@@ -1,0 +1,133 @@
+/* Lamp Toggle Component Styles */
+/* Bu dosya Tailwind CSS olmayan projeler için temel stilleri içerir */
+
+/* Radial gradient utility for browsers that don't support Tailwind */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Custom lamp component base styles (Tailwind alternatives) */
+.lamp-container {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.lamp-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lamp-cable {
+  width: 0.25rem;
+  transition: all 0.5s ease;
+}
+
+.lamp-cable-dark {
+  background: linear-gradient(to bottom, #475569, #374151);
+}
+
+.lamp-cable-light {
+  background: linear-gradient(to bottom, #92400e, #78350f);
+}
+
+.lamp-body {
+  position: relative;
+  cursor: pointer;
+}
+
+.lamp-body-small {
+  width: 8rem;
+  height: 1.5rem;
+}
+
+.lamp-body-medium {
+  width: 14rem;
+  height: 2.5rem;
+}
+
+.lamp-body-large {
+  width: 20rem;
+  height: 3.5rem;
+}
+
+.lamp-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.lamp-glow-outer {
+  position: absolute;
+  inset: -2rem;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(251, 146, 60, 0.2) 50%, transparent 100%);
+  border-radius: 9999px;
+  filter: blur(1.5rem);
+}
+
+.lamp-glow-inner {
+  position: absolute;
+  inset: -1rem;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, rgba(254, 215, 170, 0.3) 50%, transparent 100%);
+  border-radius: 9999px;
+  filter: blur(0.75rem);
+}
+
+.lamp-main {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  clip-path: polygon(8% 0%, 92% 0%, 88% 100%, 12% 100%);
+}
+
+.lamp-main-on {
+  background: linear-gradient(to bottom, #fde047, #f97316);
+  box-shadow: 0 0 1.875rem rgba(251, 146, 60, 0.6), 0 0 3.75rem rgba(251, 146, 60, 0.3);
+}
+
+.lamp-main-off {
+  background: linear-gradient(to bottom, #475569, #1f2937);
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.3);
+}
+
+.lamp-inner-light {
+  position: absolute;
+  inset: 0.25rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(254, 240, 138, 0.6));
+  border-radius: 0.125rem;
+  clip-path: polygon(0% 0%, 94% 0%, 91% 50%, 9% 50%);
+}
+
+.lamp-detail-top {
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 0.125rem;
+  transition: color 0.5s ease;
+}
+
+.lamp-detail-bottom {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 0.125rem;
+  transition: color 0.5s ease;
+}
+
+.lamp-detail-on {
+  background-color: rgba(254, 240, 138, 0.8);
+}
+
+.lamp-detail-off {
+  background-color: rgba(148, 163, 184, 0.6);
+}

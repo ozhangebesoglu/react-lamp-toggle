@@ -1,0 +1,67 @@
+{
+  "name": "Lamp Toggle",
+  "description": "Beautiful animated lamp component for theme switching with smooth animations",
+  "version": "1.0.0",
+  "author": "Ozhan Gebesoglu",
+  "category": "Interactive",
+  "tags": ["theme", "toggle", "animation", "lamp", "dark-mode", "light-mode", "framer-motion"],
+  "framework": "react",
+  "dependencies": [
+    "framer-motion",
+    "react"
+  ],
+  "features": [
+    "Smooth animations with Framer Motion",
+    "Perfect for light/dark theme switching", 
+    "Responsive design",
+    "TypeScript support",
+    "Customizable size and position",
+    "Zero additional dependencies"
+  ],
+  "props": {
+    "isDark": {
+      "type": "boolean",
+      "required": true,
+      "description": "Current theme state - true for dark, false for light"
+    },
+    "onToggle": {
+      "type": "function",
+      "required": true,
+      "description": "Callback function when lamp is clicked"
+    },
+    "className": {
+      "type": "string",
+      "required": false,
+      "description": "Additional CSS classes"
+    },
+    "size": {
+      "type": "string",
+      "required": false,
+      "options": ["small", "medium", "large"],
+      "default": "medium",
+      "description": "Size variant of the lamp"
+    },
+    "animationDuration": {
+      "type": "number",
+      "required": false,
+      "default": 0.3,
+      "description": "Animation duration in seconds"
+    }
+  },
+  "examples": [
+    {
+      "name": "Basic Usage",
+      "code": "const [isDark, setIsDark] = useState(false);\n\n<LampToggle \n  isDark={isDark}\n  onToggle={() => setIsDark(!isDark)}\n/>"
+    },
+    {
+      "name": "Different Sizes",
+      "code": "<LampToggle size=\"small\" isDark={isDark} onToggle={toggleTheme} />\n<LampToggle size=\"medium\" isDark={isDark} onToggle={toggleTheme} />\n<LampToggle size=\"large\" isDark={isDark} onToggle={toggleTheme} />"
+    },
+    {
+      "name": "Custom Animation",
+      "code": "<LampToggle \n  animationDuration={0.8}\n  isDark={isDark} \n  onToggle={toggleTheme} \n/>"
+    }
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/ozhangebesoglu/react-lamp-toggle"
+}
